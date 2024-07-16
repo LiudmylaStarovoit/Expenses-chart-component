@@ -67,18 +67,42 @@ body {
         &-days {
             display: grid;
             grid-template-columns: repeat(7, 1fr);
-            gap: 5%;
+            gap: 3%;
+            align-items:flex-end;
+        }
+        &-day {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            align-items: center;
+            cursor: pointer;
+            &:hover {
+                .chart-main-amount {
+                    visibility: visible;
+                }
+            }
+        }
+        &-amount {
+            visibility: hidden;
+            padding: 5px;
+            border-radius: 5px;
+            font-size: 12px;
+            background: var(--dark-brown);
+            color: var(--cream);
         }
         &-diagram {
+            width: 38px;
             height: 150px;
-            background-color: var(--primary-soft-red);
+            background: var(--primary-soft-red);
             border-radius: 5px;
+            &:hover {
+                opacity: .6;
+            }
         }
-        &-name {
+        &-weekday {
             color: var(--medium-brown);
             font-size: 11px;
             text-align: center;
-            margin-top: 7px;
         }
         &-divider {
             width: 100%;
@@ -103,7 +127,7 @@ body {
             align-items: end;
             justify-content: end;
         }
-        &-amount {
+        &-week-amount {
             font-weight: 700;
             font-size: 26px;
             color: var(--dark-brown);
