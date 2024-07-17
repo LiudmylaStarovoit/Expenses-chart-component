@@ -65,16 +65,16 @@ body {
             margin-bottom: 45px;
         }
         &-days {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
+            display: flex;
             gap: 3%;
-            align-items:flex-end;
+            justify-content: space-between;
         }
         &-day {
             display: flex;
             flex-direction: column;
             gap: 5px;
             align-items: center;
+            width: fit-content;
             cursor: pointer;
             &:hover {
                 .chart-main-amount {
@@ -91,7 +91,7 @@ body {
             color: var(--cream);
         }
         &-diagram {
-            width: 38px;
+            width: 36px;
             height: 150px;
             background: var(--primary-soft-red);
             border-radius: 5px;
@@ -143,5 +143,22 @@ body {
 @media (max-width: 576px) {
     .chart {
         width: 90%;
+    }
+}
+
+@media (max-width: 430px) {
+    .chart {
+        &-main, &-top {
+            padding: 15px;
+            &-days {
+                gap: 1%;
+            }
+            &-amount {
+                font-size: 10px;
+            }
+            &-diagram {
+                width: 30px;
+            }
+        }
     }
 }
